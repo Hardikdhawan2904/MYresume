@@ -3,12 +3,13 @@
   background: #000;
   min-height: 100vh;
   display: flex;
+    min-height: auto;  
   flex-direction: column;
   align-items: center;
   justify-content: center;   /* center vertically */
   padding: 0;                /* remove extra padding */
   margin: 0;
-  transform: translateY(-70px);
+  transform: translateY(-20px);
 }
 
 /* Heading */
@@ -17,13 +18,13 @@
   display: flex;
   align-items: center;       /* Align icon with text */
   justify-content: center;   /* Center the whole thing */
-  gap: 15px;                 /* Add spacing between icon and text */
+  gap: 10px;                 /* Add spacing between icon and text */
   width: 50%;
   text-align: center;
   color: rgb(201, 86, 201);
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin: 100px 0;
+   margin: 100px 0 20px 0;
 
   /* Glow effect for text and icon */
   text-shadow: 0 0 10px rgba(201, 86, 201, 0.8),
@@ -75,28 +76,34 @@
 /* Form */
 .contact-form {
   flex: 1;
-  height: 88%;
+  /* Remove fixed height so content fits naturally */
+  height: auto;             
+  min-height: 88%;          /* keep a minimum if you want */
+  
   background: #111;
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  box-shadow: 0 0 20px rgba(201, 86, 201, 0.5), 0 0 40px rgba(201, 86, 201, 0.3);
+  justify-content: flex-start; /* start content from top */
+  box-shadow: 0 0 20px rgba(201, 86, 201, 0.5),
+              0 0 40px rgba(201, 86, 201, 0.3);
   border-radius: 10px;
   margin-left: 200px;
   animation: glowBox 2s ease-in-out infinite;
+  
 }
+
 
 /* Form group */
 .form-group {
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 
 .form-group label {
   display: block;
   color: #934f9c;
   font-size: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .form-group input,
@@ -113,7 +120,7 @@
 }
 
 .form-group textarea {
-  min-height: 220px;
+  min-height: 180px;  
   resize: none;
 }
 
@@ -177,23 +184,26 @@
   z-index: 1; 
 }
 .contact-footer {
-    width: 80vw;
+  width: 80vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 200px; /* Increase left & right padding */
+  padding: 0 200px;   /* remove top & bottom padding, keep left/right */
   background: #000000;
   color: #fff;
+  margin-top: -40px;      /* remove space above */
+  margin-bottom: 0;   /* remove space below */
 }
 
+
 .footer-left {
-  margin-left: 20px; /* Push more left */
+  margin-left: 60px; /* Push more left */
 }
 
 .footer-right {
   display: flex;
   align-items: center;
-  gap: 500px;
+  gap: 300px;
   margin-right: 40px; /* Push more right */
 }
 
@@ -226,3 +236,14 @@
 }
 
 
+.timeline-section,
+.skills-section {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.skill-card {
+  margin-bottom: 0;   /* remove extra gap under each card */
+}
+.skills-section, .skills-row {
+  overflow: hidden;
+}

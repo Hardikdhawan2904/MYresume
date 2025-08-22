@@ -49,7 +49,20 @@ function AnimatedModel(props) {
 
 export default function App() {
   
-  
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    function handleScale() {
+      // devicePixelRatio is 1.0 at 100%, 1.25 at 125%, 1.5 at 150%, etc.
+      const zoom = window.devicePixelRatio;
+      setScale(1 / zoom); // compensate automatically
+    }
+
+    handleScale();
+    window.addEventListener("resize", handleScale);
+
+    return () => window.removeEventListener("resize", handleScale);
+  }, []);
   const container = {
     width: "100%",
     maxWidth: 1180,
@@ -126,8 +139,21 @@ export default function App() {
      <>
     
     <Analytics />
-    <div className="fade-in" style={{ fontFamily: "Poppins, sans-serif" }}>
-      
+     <div
+  id="app-wrapper"
+  style={{
+    transform: `scale(${scale})`,
+    transformOrigin: "top left",
+    width: `${1920}px`,
+    height: `${1080}px`,
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    marginLeft: "-960px",
+    marginTop: "-540px",
+    background: "#000000ff",
+  }}
+></div>
       <LandingPage />
       {/* Fixed Top Bar */}
       <header
@@ -230,7 +256,7 @@ export default function App() {
       alignItems: "center",
       backgroundColor: "rgba(0,0,0,.85)",
       justifyContent: "space-between",
-      gap: "40px",
+      gap: "20px",
     }}
   >
     {/* Left: Image and Text */}
@@ -260,7 +286,7 @@ export default function App() {
           objectFit: "cover",
           border: "3px solid rgba(65, 36, 88, 0.2)",
           marginBottom: 20,
-          marginLeft: 250,
+          marginLeft: 200,
         }}
       />
 
@@ -273,10 +299,10 @@ export default function App() {
           viewport={{ once: false, amount: 0  }}
           style={{
             margin: 0,
-            maxWidth: 600,
-            fontSize: 28,
+            maxWidth: 700,
+            fontSize: 24,
             color: "#7758afd2",
-            lineHeight: 2,
+            lineHeight: 1.5,
           
             opacity: 2,
             fontWeight: 900,
@@ -299,7 +325,7 @@ export default function App() {
           marginTop: 16,
           fontSize: 22,
           color: "#7758afd2",
-          lineHeight: 1.6,
+          lineHeight: 1,
           fontWeight: 500,
           fontFamily: "'Roboto Slab', serif",
           marginLeft: 120,
@@ -323,7 +349,7 @@ export default function App() {
         whileTap={{ scale: 0.95 }}
         style={{
           marginTop: "20px",
-          padding: "30px 50px",
+          padding: "20px 40px",
           backgroundColor: "#121e2cff",
           color: "#ffffffff",
           border: "none",
@@ -541,7 +567,7 @@ export default function App() {
         alignItems: "center",
         justifyContent: "center",
         gap: "15px",
-        fontSize: "4rem",
+        fontSize: "3rem",
         fontWeight: "800",
         color: "#df47ecff",
       }}
@@ -564,7 +590,7 @@ export default function App() {
       <section id="contact" style={section} className="section-animate">
         <Contact />
       </section>
-    </div>
+    
       </>
   );
 }

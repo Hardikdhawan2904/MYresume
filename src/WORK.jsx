@@ -69,7 +69,7 @@ const Work = () => {
 
         <h1
           style={{
-            fontSize: "3.8rem",
+            fontSize: "3rem",
             fontWeight: "bold",
             color: "#ef4ce1ff",
             textShadow: "0 0 6px rgba(239, 76, 198, 0.7)",

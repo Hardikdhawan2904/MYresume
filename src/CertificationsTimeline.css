@@ -127,3 +127,25 @@
   transform: translateY(-5px); /* lift effect */
   transition: all 0.3s ease-in-out;
 }
+.timeline-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 3rem;           /* 👈 heading size */
+  font-weight: bold;
+  color: rgb(201, 86, 201);
+  margin-bottom: 60px;
+
+  text-shadow: 0 0 10px rgba(201, 86, 201, 0.8),
+               0 0 20px rgba(201, 86, 201, 0.6),
+               0 0 30px rgba(201, 86, 201, 0.4);
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+.timeline-icon {
+  height: 60px;
+  filter: drop-shadow(0 0 10px rgba(201, 86, 201, 0.8))
+          drop-shadow(0 0 20px rgba(201, 86, 201, 0.6))
+          drop-shadow(0 0 30px rgba(201, 86, 201, 0.4));
+}
