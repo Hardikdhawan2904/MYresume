@@ -172,5 +172,6 @@ input, textarea {
 
 .highlight-card:hover .highlight-icon {
   color: #ff00aa;
+  margin-right: 4rem;
   transform: rotate(5deg) scale(1.1);
 }
