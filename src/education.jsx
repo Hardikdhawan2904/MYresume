@@ -1,7 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGraduationCap } from "react-icons/fa";
-import "./Education.css"; // ✅ Import the CSS
+import "./education.css"; // ✅ Import the CSS
 
 const educationData = [
   {

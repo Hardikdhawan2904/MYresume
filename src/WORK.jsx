@@ -35,8 +35,8 @@ const Work = () => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyContent: "center",
-        padding: "20px",
+        
+        
         background: "rgba(0,0,0,.85)",
         color: "white",
       }}

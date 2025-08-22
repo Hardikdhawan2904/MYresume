@@ -1,5 +1,5 @@
 import React, { useState, Suspense } from "react";
-import "./Contact.css";
+import "./contact.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 useGLTF.preload("/contact.glb");

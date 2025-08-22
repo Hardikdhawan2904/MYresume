@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Wallet, BarChart3, Trophy, Lightbulb, FileText, Folder, Mic } from "lucide-react";
 import "./App.css";
 import LandingPage from "./LandingPage";
-import CustomCursor from "./CustomCursor";
+
 import Education from "./education";
 import Work from "./WORK";
 import CertificationsTimeline from "./CertificationsTimeline";
@@ -13,7 +13,9 @@ import { FiSettings } from "react-icons/fi";
 import StarField from "./StarField";
 import SkillsPage from "./SkillsPage";
 import Contact from "./contact";
-import { Suspense } from "react";
+import { Analytics } from '@vercel/analytics/react';
+
+
 
 
 <Canvas camera={{ fov: 70 }}>
@@ -46,6 +48,7 @@ function AnimatedModel(props) {
 
 
 export default function App() {
+  
   
   const container = {
     width: "100%",
@@ -106,7 +109,7 @@ export default function App() {
     description:
       "Interactive 3D resume built with React, Three.js, and Tailwind.",
     icon: <FileText className="w-10 h-10 text-orange-400" />,
-    link: "https://your-portfolio-link.com", // Deployed link
+    link: "https://github.com/Hardikdhawan2904/myresume", // Deployed link
   },
    {
     title: "Voice Assistant (Tuesday & Friday)",
@@ -120,6 +123,9 @@ export default function App() {
 
 
   return (
+     <>
+    
+    <Analytics />
     <div className="fade-in" style={{ fontFamily: "Poppins, sans-serif" }}>
       
       <LandingPage />
@@ -559,5 +565,6 @@ export default function App() {
         <Contact />
       </section>
     </div>
+      </>
   );
 }
