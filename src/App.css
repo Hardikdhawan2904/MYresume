@@ -1,0 +1,176 @@
+.nav-link {
+  
+  position: relative;
+  color: rgba(182, 169, 169, 0.9);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #9311df; /* underline color */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(0, 0, 0) ; /* Dark background */
+  color: white; /* Text color */
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 100vw;  /* ✅ prevent overflow */
+  overflow-x: hidden; 
+}
+.projects-container {
+  display: flex;
+  flex-wrap: nowrap;       /* ❌ prevent wrapping to multiple lines */
+  justify-content: center; /* ✅ start from the left */
+  align-items: stretch;
+  gap: 30px;
+  overflow-x: hidden;        /* ✅ enable horizontal scroll if content overflows */
+  padding-left: 0;         /* ✅ remove extra left padding */
+  margin-left: 0;          /* ✅ make sure it hugs the left edge */
+  scrollbar-width: none;
+     /* (Firefox) hide scrollbar */
+}
+
+.projects-container::-webkit-scrollbar {
+  display: none;           /* (Chrome/Safari) hide scrollbar */
+}
+
+
+.project-card {
+  min-width: 400px; /* adjust to your size */
+  flex: 0 0 auto;
+  margin: 0;
+  margin-left: 0;
+  /* prevents shrinking */
+}
+.floating-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  padding: 50px 0;
+  flex-wrap: wrap; /* responsive, breaks into rows on small screens */
+}
+
+.floating-logos img {
+  width: 90px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+  animation: float 3s ease-in-out infinite alternate;
+}
+
+.floating-logos img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+/* Floating animation */
+@keyframes float {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-15px); }
+}
+
+/* Add delays so each logo floats at different times */
+.delay-0 { animation-delay: 0s; }
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+.delay-3 { animation-delay: 0.9s; }
+.delay-4 { animation-delay: 1.2s; }
+.delay-5 { animation-delay: 1.5s; }
+.delay-6 { animation-delay: 1.8s; }
+.delay-6 { animation-delay: 2.1s; }
+
+
+
+.right-panel {
+  flex: 2;                /* 50% */
+  height: 100%;           /* full height */
+}
+.right-panel canvas {
+  width: 100% !important;  /* fill parent */
+  height: 100% !important; /* fill parent */
+  display: block;
+}
+
+/* Hide caret on everything */
+* {
+  caret-color: transparent;
+}
+
+/* Keep caret only for real typing fields */
+input, textarea {
+  caret-color: auto;
+}
+.hero-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-align: left;
+  line-height: 1.8;
+
+  background: linear-gradient(90deg, #a855f7, #6366f1); /* Purple → Indigo */
+  background-clip: text;            /* Standard property */
+  -webkit-background-clip: text;    /* For Chrome, Safari */
+  -webkit-text-fill-color: transparent;
+  color: transparent;               /* Fallback for browsers without support */
+}
+.highlights-section {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 50px 0;
+  background-color: #000;
+}
+
+.highlight-card {
+  background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+  border: 2px solid rgba(255, 0, 255, 0.3); /* Thicker, colored border */
+  padding: 50px;
+  border-radius: 16px;
+  width: 300px;
+  text-align: left;
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+              background 0.5s ease, border-color 0.5s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.highlight-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  background: linear-gradient(135deg, #3a3a3a, #5a5a5a);
+  border-color: rgba(234, 0, 255, 0.8); /* More vivid on hover */
+  box-shadow: 0 10px 20px rgba(255, 0, 242, 0.3),
+              0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+.highlight-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  display: inline-block;
+  color: #e100ff; /* Icon color */
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.highlight-card:hover .highlight-icon {
+  color: #ff00aa;
+  transform: rotate(5deg) scale(1.1);
+}

@@ -1,0 +1,130 @@
+.education-section {
+  min-height: 100vh;
+  width: 100%;
+  margin-top: 100px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  background: #000;
+  overflow-x: hidden;
+}
+
+.education-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 100px;
+}
+
+.education-title {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #8b4caf;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.timeline-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  gap: 80px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background: linear-gradient(90deg, #af4caf, #ff00ff, #af4caf);
+  box-shadow: 0 0 15px #e100ff, 0 0 25px #af4caf;
+  z-index: 0;
+}
+
+.education-card {
+  position: relative;
+  background: #111;
+  border-radius: 15px;
+  padding: 20px;
+  text-align: center;
+  min-width: 280px;
+  max-width: 350px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+  z-index: 1;
+}
+
+.education-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(212, 0, 255, 0.5);
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #9b4caf;
+  box-shadow: 0 0 15px #984caf;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.degree {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #9e4caf;
+  margin-bottom: 8px;
+}
+
+.field {
+  font-size: 1rem;
+  font-style: italic;
+  color: #bbb;
+  margin-bottom: 5px;
+}
+
+.college {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.details {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .timeline-line {
+    top: auto;
+    left: 0;
+    transform: none;
+    width: 4px;
+    height: 80%;
+    background: linear-gradient(180deg, #a34caf, #ea00ff, #9e4caf);
+  }
+  .circle {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

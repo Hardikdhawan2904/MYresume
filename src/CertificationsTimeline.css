@@ -1,0 +1,129 @@
+.timeline-container {
+  position: relative;
+  padding: 50px 0;
+  width: 80%;
+  margin: 0 auto;
+  min-height: 600px; /* reduced height for less spacing */
+}
+
+.timeline-bar {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #8a2be2, #ff0080);
+  transform: translateX(-50%);
+  border-radius: 3px;
+
+  /* Neon glow */
+  box-shadow: 0 0 15px #ff0080, 
+              0 0 30px #8a2be2, 
+              0 0 45px #ff0080;
+
+  /* Optional animation for pulsing effect */
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    box-shadow: 0 0 10px #ff0080,
+                0 0 20px #8a2be2,
+                0 0 30px #ff0080;
+  }
+  to {
+    box-shadow: 0 0 25px #ff0080,
+                0 0 50px #8a2be2,
+                0 0 75px #ff0080;
+  }
+}
+
+.timeline-item {
+  position: relative;
+  width: 45%;
+  padding: 3px 20px;
+  background: rgba(131, 54, 194, 0.2);
+  border-radius: 10px;
+  margin: 5px 0; /* reduced vertical gap */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease, transform 0.4s ease;
+}
+
+.timeline-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item.left {
+  margin-right: auto;
+  margin-left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  margin-left: auto;
+  margin-right: 0;
+  text-align: left;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: #ff0080;
+  border-radius: 50%;
+  top: 20px; /* adjusted position */
+  z-index: 10;
+}
+
+.timeline-item.left::before {
+  right: -15px;
+}
+
+.timeline-item.right::before {
+  left: -15px;
+}
+
+.timeline-item .content h3 {
+  margin: 0 0 5px 0;
+  color: #dfd7f7;
+  font-size: 1.2rem;
+}
+
+.timeline-item .content p {
+  margin: 0;
+  color: #cbd5e1;
+}
+
+.timeline-item .content span {
+  font-size: 0.85rem;
+  color: #a8a8a8;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 90%; /* slightly larger for mobile */
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timeline-item::before {
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%);
+  }
+}
+.timeline-item:hover {
+  background: rgba(138, 43, 226, 0.25); /* brighten background a little */
+  box-shadow: 0 0 15px #ff0080,
+              0 0 30px #8a2be2,
+              0 0 45px #ff0080;
+  transform: translateY(-5px); /* lift effect */
+  transition: all 0.3s ease-in-out;
+}

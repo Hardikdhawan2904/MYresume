@@ -1,0 +1,163 @@
+/* Skills Section */
+.skills-section {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin-top: 6rem;
+  background: linear-gradient(135deg, #000000, #000000);
+  color: white;
+  overflow-x: hidden;
+}
+
+.skills-title-icon {
+  font-size: 2.5rem;        /* size of logo */
+  margin-right: 0.8rem;     /* spacing before text */
+  color: #fb61ee;           
+  filter: drop-shadow(0 0 10px #f661fb)
+          drop-shadow(0 0 20px #fb61f3); /* glow */
+  animation: reactGlow 2s infinite alternate ease-in-out;
+  vertical-align: middle;
+}
+
+/* Glow animation */
+@keyframes reactGlow {
+  from {
+    filter: drop-shadow(0 0 5px #fb61ee)
+            drop-shadow(0 0 10px #fb61cd);
+  }
+  to {
+    filter: drop-shadow(0 0 15px #fb61e1)
+            drop-shadow(0 0 30px #fb61e6);
+  }
+}
+
+/* Title */
+.skills-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 6rem;
+  color: #ff00bf;
+  text-shadow: 0 0 10px rgba(255, 0, 242, 0.7),
+               0 0 20px rgba(255, 0, 242, 0.6),
+               0 0 40px rgba(255, 0, 242, 0.5);
+
+  display: flex; 
+  align-items: center;   /* logo + text aligned */
+  justify-content: center;
+  gap: 1rem;             /* space between logo & text */
+
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 10px rgba(255, 0, 242, 0.6),
+                 0 0 20px rgba(255, 0, 242, 0.4);
+  }
+  to {
+    text-shadow: 0 0 20px rgba(255, 0, 242, 1),
+                 0 0 40px rgba(255, 0, 242, 0.8);
+  }
+}
+
+/* Logo style */
+.skills-title-logo {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 8px rgba(255, 0, 242, 0.8));
+}
+
+/* Skills Row (3 per row grid) */
+.skills-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);  
+  gap: 3rem;                              
+  padding: 2rem;
+  justify-items: center;                  
+}
+
+/* Card */
+.skill-card {
+  position: relative;  
+  background: rgba(10, 10, 10, 0.95);
+  border-radius: 999px;   
+  padding: 2rem 1.5rem;
+  min-width: 220px;
+  height: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 12px 35px rgba(255, 0, 242, 0.5); /* 🌟 always glowing */
+  overflow: hidden;       
+  transition: box-shadow 0.3s ease;
+}
+
+/* Hover glow */
+.skill-card:hover {
+  box-shadow: 0 16px 45px rgba(255, 0, 242, 0.8); 
+}
+
+/* Water ripple effect */
+.skill-card::after {
+  content: "";
+  position: absolute;
+  bottom: -100%;           
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(49, 47, 49, 0.6);  
+  backdrop-filter: blur(2px);      
+  opacity: 0.7;
+  transition: bottom 0.8s ease-in-out;
+  z-index: 1;              
+}
+
+/* Animate rising water on hover */
+.skill-card:hover::after {
+  bottom: 0;   
+}
+
+/* Keep content above water */
+.skill-card > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Canvas Wrapper */
+.canvas-wrapper {
+  width: 100%;
+  height: 200px;   
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+/* Label */
+/* Label */
+.skill-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 10px;
+  text-align: center;
+
+  /* Gradient text effect (purplish only) */
+  background: linear-gradient(90deg, #ff4de1, #d24dff, #9b4dff);
+   background-clip: text; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Glow effect (purples only) */
+  text-shadow: 0 0 6px rgba(255, 77, 225, 0.7),
+               0 0 12px rgba(210, 77, 255, 0.5),
+               0 0 20px rgba(155, 77, 255, 0.4);
+
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Label enlarges when card is hovered */
+.skill-card:hover .skill-label {
+  transform: scale(1.08);
+  text-shadow: 0 0 10px rgba(255, 77, 225, 0.9),
+               0 0 20px rgba(210, 77, 255, 0.7),
+               0 0 30px rgba(155, 77, 255, 0.6);
+}
