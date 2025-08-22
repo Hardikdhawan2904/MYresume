@@ -162,16 +162,42 @@ input, textarea {
 }
 
 
-.highlight-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  display: inline-block;
-  color: #e100ff; /* Icon color */
-  transition: color 0.3s ease, transform 0.3s ease;
+.highlights-section {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
 }
 
-.highlight-card:hover .highlight-icon {
-  color: #ff00aa;
-  margin-right: 4rem;
-  transform: rotate(5deg) scale(1.1);
+.highlight-card {
+  background: rgba(10, 10, 10, 0.95);
+  border-radius: 20px;
+  padding: 1rem 1.2rem;   /* smaller padding */
+  width: 220px;           /* smaller width */
+  height: 220px;          /* smaller height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(255, 0, 242, 0.3);
+  text-align: center;
+}
+
+.highlight-icon {
+  font-size: 2rem;  /* reduced size */
+  margin-bottom: 0.8rem;
+}
+
+.highlight-card h3 {
+  font-size: 1.2rem; /* smaller heading */
+  margin-bottom: 0.5rem;
+}
+
+.highlight-card p {
+  font-size: 0.9rem; /* smaller text */
+  line-height: 1.3;
+}
+
+.highlight-card {
+  cursor: pointer; /* changes to hand on hover */
 }

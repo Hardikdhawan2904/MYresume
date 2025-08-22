@@ -536,23 +536,36 @@ export default function App() {
   <Education />
 </section>
 <section className="highlights-section">
-  <div className="highlight-card">
-    <span className="highlight-icon">💡</span>
-    <motion.h3>Innovation</motion.h3>
-    <motion.p>Bringing creative solutions to complex challenges with a fresh perspective.</motion.p>
-  </div>
-  <div className="highlight-card">
-    <span className="highlight-icon">🤝</span>
-    <motion.h3>Collaboration</motion.h3>
-    <motion.p>Working closely with teams and clients to ensure mutual success.</motion.p>
-  </div>
-  <div className="highlight-card">
-    <span className="highlight-icon">📈</span>
-    <motion.h3>Growth</motion.h3>
-    <motion.p>Constantly learning and improving to deliver the best possible results.</motion.p>
-  </div>
-</section>
+      <motion.div
+        className="highlight-card"
+        whileHover={{ scale: 1.05, boxShadow: "0px 8px 25px rgba(255,0,242,0.4)" }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <span className="highlight-icon">💡</span>
+        <motion.h3>Innovation</motion.h3>
+        <motion.p>Bringing creative solutions to complex challenges with a fresh perspective.</motion.p>
+      </motion.div>
 
+      <motion.div
+        className="highlight-card"
+        whileHover={{ scale: 1.05, boxShadow: "0px 8px 25px rgba(255,0,242,0.4)" }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <span className="highlight-icon">🤝</span>
+        <motion.h3>Collaboration</motion.h3>
+        <motion.p>Working closely with teams and clients to ensure mutual success.</motion.p>
+      </motion.div>
+
+      <motion.div
+        className="highlight-card"
+        whileHover={{ scale: 1.05, boxShadow: "0px 8px 25px rgba(255,0,242,0.4)" }}
+        whileTap={{ scale: 0.95 }}
+      >
+        <span className="highlight-icon">📈</span>
+        <motion.h3>Growth</motion.h3>
+        <motion.p>Constantly learning and improving to deliver the best possible results.</motion.p>
+      </motion.div>
+    </section>
 
 
       <section id="work-experience" style={section} className="section-animate">
