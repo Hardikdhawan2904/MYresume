@@ -299,8 +299,8 @@ export default function App() {
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: false, amount: 0  }}
         style={{
-          width: 250,
-          height: 250,
+          width: 200,
+          height: 200,
           borderRadius: "50%",
           objectFit: "cover",
           border: "3px solid rgba(65, 36, 88, 0.2)",
