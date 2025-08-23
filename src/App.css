@@ -203,16 +203,11 @@ input, textarea { caret-color: auto; }
     gap: 1.5rem;
   }
 }
-@media (max-width: 768px) {
-  .nav-link {
-    font-size: 0.85rem;
-    padding: 0.4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-link {
-    font-size: 0.75rem;
-    padding: 0.3rem;
+@media (max-width: 1024px) {
+  body {
+    transform: scale(calc(100vw / 1920));
+    transform-origin: top left;
+    width: 1920px;
+    height: 1080px;
   }
 }
