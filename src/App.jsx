@@ -42,8 +42,27 @@ useGLTF.preload("/myModel.glb");
 
 function AnimatedModel(props) {
   const { scene } = useGLTF("/myModel.glb");
-  return <primitive object={scene} {...props} />;
- 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768); // mobile breakpoint
+    };
+
+    handleResize(); // run once on mount
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return (
+    <primitive
+      object={scene}
+      scale={isMobile ? 25 : 17}        // 🔥 bigger on mobile
+      position={isMobile ? [0, -10, 0] : [10, -8, 8]} // adjust placement
+      rotation={[Math.PI / 700, Math.PI / 1000, 0]}
+      {...props}
+    />
+  );
 }
 
 
