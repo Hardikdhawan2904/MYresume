@@ -203,11 +203,3 @@ input, textarea { caret-color: auto; }
     gap: 1.5rem;
   }
 }
-@media (max-width: 1024px) {
-  body {
-    transform: scale(calc(100vw / 1920));
-    transform-origin: top left;
-    width: 1920px;
-    height: 1080px;
-  }
-}
