@@ -4,6 +4,7 @@ import { OrbitControls, useGLTF, Bounds } from "@react-three/drei";
 import { motion } from "framer-motion";
 import { Wallet, BarChart3, Trophy, Lightbulb, FileText, Folder, Mic } from "lucide-react";
 import "./App.css";
+
 import LandingPage from "./LandingPage";
 
 import Education from "./education";

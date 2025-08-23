@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiMonitor } from "react-icons/fi"; // correct icon
+import { FiMonitor } from "react-icons/fi";
 
 const experiences = [
   {
@@ -29,42 +29,39 @@ const Work = () => {
       id="work"
       style={{
         minHeight: "60vh",
-         justifyContent: "flex-start", // <- Move content to top
-    padding: "10px 40px 40px 40px",
+        justifyContent: "flex-start",
+        padding: "0.625rem 2.5rem 2.5rem 2.5rem", // 10px 40px 40px 40px
         width: "100vw",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        
-        
         background: "rgba(0,0,0,.85)",
         color: "white",
       }}
     >
-      {/* Animated heading with laptop icon */}
+      {/* Animated heading */}
       <motion.div
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "15px",
-          marginBottom: "60px",
+          gap: "0.9375rem", // 15px
+          marginBottom: "3.75rem", // 60px
         }}
         animate={{ scale: [1, 1.05, 1] }}
         viewport={{ once: false, amount: 0 }}
         transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
       >
-        {/* Laptop/Monitor icon with independent glow */}
         <motion.div
           animate={{
             textShadow: [
-              "0 0 6px #ef4ce1",
-              "0 0 14px #ef4ce1",
-              "0 0 6px #ef4ce1",
+              "0 0 0.375rem #ef4ce1", // 6px
+              "0 0 0.875rem #ef4ce1", // 14px
+              "0 0 0.375rem #ef4ce1", // 6px
             ],
           }}
           transition={{ duration: 2, repeat: Infinity, repeatType: "loop" }}
         >
-          <FiMonitor size={40} color="#ef4ce1" />
+          <FiMonitor size={2.5 * 16} color="#ef4ce1" /> {/* 40px */}
         </motion.div>
 
         <h1
@@ -72,7 +69,7 @@ const Work = () => {
             fontSize: "3rem",
             fontWeight: "bold",
             color: "#ef4ce1ff",
-            textShadow: "0 0 6px rgba(239, 76, 198, 0.7)",
+            textShadow: "0 0 0.375rem rgba(239, 76, 198, 0.7)", // 6px
           }}
         >
           Work Experience
@@ -81,12 +78,12 @@ const Work = () => {
 
       <div
         style={{
-          maxWidth: "900px",
+          maxWidth: "56.25rem", // 900px
           width: "100%",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          gap: "25px",
+          gap: "1.5625rem", // 25px
         }}
       >
         {experiences.map((exp, index) => (
@@ -94,19 +91,19 @@ const Work = () => {
             key={index}
             style={{
               width: "100%",
-              padding: "25px",
-              borderRadius: "16px",
+              padding: "1.5625rem", // 25px
+              borderRadius: "1rem", // 16px
               background: "rgba(255, 255, 255, 0.05)",
               border: "1px solid rgba(239, 76, 239, 0.3)",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+              boxShadow: "0 0.25rem 0.75rem rgba(0,0,0,0.2)", // 4px 12px
               textAlign: "center",
             }}
             whileHover={{
               scale: 1.03,
               boxShadow:
-                "0 0 12px rgba(239,76,198,0.4), 0 4px 15px rgba(0,0,0,0.2)",
+                "0 0 0.75rem rgba(239,76,198,0.4), 0 0.25rem 0.9375rem rgba(0,0,0,0.2)", // 12px, 4px, 15px
             }}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 1.25 }} // 20px
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -115,18 +112,24 @@ const Work = () => {
               style={{
                 fontSize: "1.8rem",
                 color: "#ef4cd4ff",
-                marginBottom: "10px",
-                textShadow: "0 0 4px rgba(239, 76, 212, 0.5)",
+                marginBottom: "0.625rem", // 10px
+                textShadow: "0 0 0.25rem rgba(239, 76, 212, 0.5)", // 4px
               }}
             >
               {exp.role}
             </h2>
-            <p style={{ fontSize: "1rem", opacity: 0.7, marginBottom: "12px" }}>
+            <p style={{ fontSize: "1rem", opacity: 0.7, marginBottom: "0.75rem" }}>
               {exp.date}
             </p>
-            <ul style={{ listStyleType: "none", paddingLeft: 0, lineHeight: "1.8" }}>
+            <ul
+              style={{
+                listStyleType: "none",
+                paddingLeft: 0,
+                lineHeight: "1.8",
+              }}
+            >
               {exp.details.map((point, i) => (
-                <li key={i} style={{ marginBottom: "8px" }}>
+                <li key={i} style={{ marginBottom: "0.5rem" }}>
                   • {point}
                 </li>
               ))}
