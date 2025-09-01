@@ -319,7 +319,7 @@ export default function App() {
           viewport={{ once: false, amount: 0  }}
           style={{
             margin: 0,
-            maxWidth: 700,
+            maxWidth: 900,
             fontSize: 24,
             color: "#7758afd2",
             lineHeight: 1.5,
