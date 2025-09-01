@@ -330,9 +330,7 @@ export default function App() {
             marginLeft: 120,
           }}
         >
-        Passionate and driven technology enthusiast with a strong focus on
-        software development, constantly seeking innovative solutions to
-        advance in the tech landscape.
+        AI & Frontend Developer skilled in React.js, Python, and data visualization. Delivered 4+ projects including dashboards, analytics platforms, and 3D web apps. Certified in AI, ML, and Data Analytics with proven impact on performance optimization and team productivity.
       </motion.p>
 
       {/* Second Paragraph */}
