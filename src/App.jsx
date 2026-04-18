@@ -236,7 +236,7 @@ export default function App() {
   <div
     className="intro-inner"
     style={{
-      width: "100vw",
+      width: "100%",
       display: "flex",
       flexDirection: "row",
       alignItems: "center",
