@@ -47,7 +47,7 @@ export default function Education() {
         </motion.div>
 
         {/* Timeline */}
-        <div className="timeline-container">
+        <div className="edu-timeline-container">
           <div className="timeline-line"></div>
           {educationData.map((edu, index) => (
             <motion.div
