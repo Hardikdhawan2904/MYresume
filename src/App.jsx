@@ -97,11 +97,11 @@ export default function App() {
   // ✅ Projects data
   const projects = [
   {
-    title: "Personal Finance Tracker",
+    title: "HoloGrid Sphere",
     description:
-      "Tkinter-based app for tracking income and expenses with data visualization.",
-    icon: <Wallet className="w-10 h-10 text-green-400" />,
-    link: "https://github.com/Hardikdhawan2904/personal-finance-tracker", // Example
+      "Interactive holographic sphere with animated grid lines and futuristic HUD effects.",
+    icon: <Lightbulb className="w-10 h-10 text-cyan-400" />,
+    link: "https://github.com/Hardikdhawan2904/HoloGrid-Sphere",
   },
   {
     title: "Purchase Order Dashboard",

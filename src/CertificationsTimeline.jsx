@@ -2,18 +2,14 @@ import React, { useEffect, useRef, useState } from "react";
 import "./CertificationsTimeline.css";
 
 const certifications = [
+  { title: "AWS Certified Solutions Architect – Associate", issuer: "Amazon Web Services" },
+  { title: "AWS Certified Developer – Associate", issuer: "Amazon Web Services" },
+  { title: "AWS Certified AI Practitioner", issuer: "Amazon Web Services" },
+  { title: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services" },
   { title: "Oracle Cloud AI Foundations", issuer: "Oracle", date: "2025-2027" },
   { title: "Smart India Hackathon", issuer: "Ministry of Education, India", date: "Sep 2024" },
-  { title: "Certificate of Participation – Adobe India Hackathon", issuer: "Adobe" },
-  { title: "Introduction to Machine Learning", issuer: "Amazon Web Services" },
-  { title: "Get Started with Python", issuer: "Google" },
-  { title: "Introduction to Artificial Intelligence", issuer: "IBM" },
-  { title: "Introduction to Data Analytics", issuer: "IBM" },
   { title: "Programming in Java", issuer: "NPTEL, IIT Kharagpur" },
-  { title: "Image Processing Onramp", issuer: "MathWorks" },
-  { title: "MATLAB Onramp", issuer: "MathWorks" },
   { title: "Deloitte Technology Job Simulation", issuer: "Deloitte", date: "June 2025" },
-
 ];
 
 const CertificationsTimeline = () => {

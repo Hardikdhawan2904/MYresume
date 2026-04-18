@@ -27,12 +27,14 @@
 
 /* ─── Container ──────────────────────────────────── */
 .timeline-container {
+  display: block !important;
   position: relative;
-  padding: 40px 0;
-  width: 85%;
-  max-width: 900px;
+  padding: 40px 20px;
+  width: 80%;
+  max-width: 860px;
   margin: 0 auto;
   min-height: 500px;
+  box-sizing: border-box;
 }
 
 /* ─── Animated bar ───────────────────────────────── */
@@ -76,8 +78,16 @@
   transform: translateY(-4px);
 }
 
-.timeline-item.left  { margin-right: auto; margin-left: 0;    text-align: right; }
-.timeline-item.right { margin-left:  auto; margin-right: 0;   text-align: left;  }
+.timeline-item.left {
+  margin-left: 0;
+  margin-right: 56%;
+  text-align: right;
+}
+.timeline-item.right {
+  margin-left: 56%;
+  margin-right: 0;
+  text-align: left;
+}
 
 /* Dot connector */
 .timeline-item::before {
@@ -90,8 +100,8 @@
   box-shadow: 0 0 8px #ff0080, 0 0 16px #8a2be2;
   z-index: 10;
 }
-.timeline-item.left::before  { right: -22px; }
-.timeline-item.right::before { left:  -22px; }
+.timeline-item.left::before  { right: -20px; left: auto; }
+.timeline-item.right::before { left:  -20px; right: auto; }
 
 /* Content */
 .timeline-item .content h3 {
