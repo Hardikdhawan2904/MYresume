@@ -569,7 +569,7 @@ export default function App() {
   <SkillsPage />
 </section>
 
-      <section id="contact" style={section} className="section-animate">
+      <section id="contact" style={{ ...section, width: "100%", padding: 0 }} className="section-animate">
         <Contact />
       </section>
     
