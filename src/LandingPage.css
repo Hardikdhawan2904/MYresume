@@ -334,7 +334,7 @@
 .rotating-subtext{
   font-size: 2.5rem;       /* Bigger paragraph size */
   font-weight: 600;
-  line-height: 0.5;
+  line-height: 1.4;
   color: #ffffff;
   display: flex;
   justify-content: center;
