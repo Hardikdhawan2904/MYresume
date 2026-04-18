@@ -15,10 +15,11 @@
 
 .education-header {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  
-  margin-bottom: 100px;
+  gap: 16px;
+  margin-bottom: 60px;
 }
 
 .education-title {
@@ -35,9 +36,9 @@
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  gap: 80px;
+  gap: 40px;
   width: 100%;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .timeline-line {
@@ -53,12 +54,13 @@
 }
 
 .education-card {
+  flex: 1 1 0;
   position: relative;
   background: #111;
   border-radius: 15px;
   padding: 20px;
   text-align: center;
-  min-width: 280px;
+  min-width: 0;
   max-width: 350px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
   transition: transform 0.3s;
