@@ -68,21 +68,8 @@ function AnimatedModel(props) {
 
 
 export default function App() {
-  
-  const [scale, setScale] = useState(1);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-  useEffect(() => {
-    function handleScale() {
-      // devicePixelRatio is 1.0 at 100%, 1.25 at 125%, 1.5 at 150%, etc.
-      const zoom = window.devicePixelRatio;
-      setScale(1 / zoom); // compensate automatically
-    }
-
-    handleScale();
-    window.addEventListener("resize", handleScale);
-
-    return () => window.removeEventListener("resize", handleScale);
-  }, []);
   const container = {
     width: "100%",
     maxWidth: 1180,
@@ -157,23 +144,8 @@ export default function App() {
 
   return (
      <>
-    
+
     <Analytics />
-     <div
-  id="app-wrapper"
-  style={{
-    transform: `scale(${scale})`,
-    transformOrigin: "top left",
-    width: `${1920}px`,
-    height: `${1080}px`,
-    position: "absolute",
-    left: "50%",
-    top: "50%",
-    marginLeft: "-960px",
-    marginTop: "-540px",
-    background: "#000000ff",
-  }}
-></div>
       <LandingPage />
       {/* Fixed Top Bar */}
       <header
@@ -213,51 +185,44 @@ export default function App() {
             Hardik Dhawan
           </a>
 
-          <nav
-            style={{
-              justifySelf: "center",
-              display: "flex",
-              gap: 28,
-              flexWrap: "wrap",
-            }}
-          >
-            <a href="#projects-experience" className="nav-link" style={link}>
-              Projects 
-            </a>
-            <a href="#education" className="nav-link" style={link}>
-              Education
-            </a>
-            <a href="#work-experience" className="nav-link" style={link}>
-              Work Experience
-            </a>
-            <a href="#certifications" className="nav-link" style={link}>
-              Certifications
-            </a>
-            <a href="#skills" className="nav-link" style={link}>
-              Skills
-            </a>
+          <nav className="main-nav" style={{ justifySelf: "center", display: "flex", gap: 28, flexWrap: "wrap" }}>
+            <a href="#projects-experience" className="nav-link" style={link}>Projects</a>
+            <a href="#education" className="nav-link" style={link}>Education</a>
+            <a href="#work-experience" className="nav-link" style={link}>Work Experience</a>
+            <a href="#certifications" className="nav-link" style={link}>Certifications</a>
+            <a href="#skills" className="nav-link" style={link}>Skills</a>
           </nav>
 
-          <a
-            href="#contact"
-            className="contact-btn"
-            style={{
-              justifySelf: "end",
-              padding: "8px 16px",
-              background: "#121e2cff",
-              color: "#fff",
-              borderRadius: 6,
-              textDecoration: "none",
-            }}
-            onMouseOver={(e) =>
-              (e.currentTarget.style.backgroundColor = "#9311df")
-            }
-            onMouseOut={(e) =>
-              (e.currentTarget.style.backgroundColor = "#121e2cff")
-            }
-          >
-            Contact me
-          </a>
+          <div style={{ justifySelf: "end", display: "flex", alignItems: "center", gap: 12 }}>
+            <a
+              href="#contact"
+              className="contact-btn"
+              style={{ padding: "8px 16px", background: "#121e2cff", color: "#fff", borderRadius: 6, textDecoration: "none" }}
+              onMouseOver={(e) => (e.currentTarget.style.backgroundColor = "#9311df")}
+              onMouseOut={(e) => (e.currentTarget.style.backgroundColor = "#121e2cff")}
+            >
+              Contact me
+            </a>
+            <button
+              className="hamburger-btn"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label="Toggle menu"
+            >
+              <span className={`ham-line ${menuOpen ? "open" : ""}`}></span>
+              <span className={`ham-line ${menuOpen ? "open" : ""}`}></span>
+              <span className={`ham-line ${menuOpen ? "open" : ""}`}></span>
+            </button>
+          </div>
+
+          {menuOpen && (
+            <div className="mobile-menu">
+              {["#projects-experience", "#education", "#work-experience", "#certifications", "#skills", "#contact"].map((href) => (
+                <a key={href} href={href} className="mobile-nav-link" onClick={() => setMenuOpen(false)}>
+                  {href.replace("#", "").replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())}
+                </a>
+              ))}
+            </div>
+          )}
         </div>
       </header>
 
@@ -269,6 +234,7 @@ export default function App() {
 {/* Intro Section */}
 <section id="intro" style={section} className="section-animate">
   <div
+    className="intro-inner"
     style={{
       width: "100vw",
       display: "flex",
@@ -281,6 +247,7 @@ export default function App() {
   >
     {/* Left: Image and Text */}
     <div
+      className="intro-left"
       style={{
         flex: 1,
         display: "flex",

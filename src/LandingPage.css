@@ -374,6 +374,58 @@
 .rotating-wrapper {
   display: inline-block;
   position: relative;
-  min-width: 280px;   /* adjust this to the longest word length */
+  min-width: 280px;
   text-align: center;
+}
+
+/* ------------ LANDING PAGE MOBILE ------------ */
+@media (max-width: 768px) {
+  .landing-text {
+    font-size: 2.5rem !important;
+    padding: 0 16px;
+  }
+
+  .landing-quote {
+    font-size: 1rem !important;
+    padding: 0 20px;
+  }
+
+  .rotating-text,
+  .rotating-subtext {
+    font-size: 1.6rem !important;
+    padding: 0 12px;
+  }
+
+  .highlight-word {
+    font-size: 1.8rem !important;
+    gap: 10px !important;
+  }
+
+  .highlight-word svg {
+    width: 1.8rem !important;
+    height: 1.8rem !important;
+  }
+
+  .rotating-wrapper {
+    min-width: 180px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-text {
+    font-size: 2rem !important;
+  }
+
+  .rotating-text,
+  .rotating-subtext {
+    font-size: 1.3rem !important;
+  }
+
+  .highlight-word {
+    font-size: 1.5rem !important;
+  }
+
+  .rotating-wrapper {
+    min-width: 150px !important;
+  }
 }

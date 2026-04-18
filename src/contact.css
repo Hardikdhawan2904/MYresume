@@ -248,3 +248,58 @@
 .skills-section, .skills-row {
   overflow: hidden;
 }
+
+/* ------------ CONTACT MOBILE ------------ */
+@media (max-width: 768px) {
+  .contact-content {
+    flex-direction: column !important;
+    height: auto !important;
+    padding: 0 16px !important;
+    gap: 24px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  .contact-form {
+    margin-left: 0 !important;
+    padding: 24px 16px !important;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .contact-model {
+    display: none !important;
+  }
+
+  .contact-title {
+    font-size: 2rem !important;
+    margin: 40px 0 16px !important;
+    width: 90% !important;
+  }
+
+  .contact-footer {
+    flex-direction: column !important;
+    padding: 16px !important;
+    gap: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box;
+    margin-top: 0 !important;
+  }
+
+  .footer-right {
+    gap: 20px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    margin-right: 0 !important;
+  }
+
+  .footer-logos {
+    gap: 16px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .footer-left {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+}
