@@ -104,19 +104,36 @@
 
 /* Responsive */
 @media screen and (max-width: 768px) {
+  .timeline-container {
+    width: 95%;
+    padding: 20px 0;
+  }
+
+  .timeline-bar {
+    display: none;
+  }
+
   .timeline-item,
   .timeline-item.left,
   .timeline-item.right {
-    width: 90%; /* slightly larger for mobile */
+    width: 90%;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
   }
 
   .timeline-item::before {
-    left: 50% !important;
-    right: auto !important;
-    transform: translateX(-50%);
+    display: none;
+  }
+
+  .timeline-title {
+    font-size: 2rem;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .timeline-icon {
+    height: 40px;
   }
 }
 .timeline-item:hover {

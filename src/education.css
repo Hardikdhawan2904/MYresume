@@ -109,22 +109,32 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .education-header {
+    margin-bottom: 40px;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .education-title {
+    font-size: 2rem;
+  }
+
   .timeline-container {
     flex-direction: column;
     align-items: center;
     gap: 60px;
   }
+
   .timeline-line {
-    top: auto;
-    left: 0;
-    transform: none;
-    width: 4px;
-    height: 80%;
-    background: linear-gradient(180deg, #a34caf, #ea00ff, #9e4caf);
+    display: none;
   }
+
   .circle {
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
+    display: none;
+  }
+
+  .education-card {
+    min-width: 85vw;
+    max-width: 90vw;
   }
 }

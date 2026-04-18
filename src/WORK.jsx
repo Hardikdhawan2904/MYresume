@@ -31,7 +31,8 @@ const Work = () => {
         minHeight: "60vh",
         justifyContent: "flex-start",
         padding: "0.625rem 2.5rem 2.5rem 2.5rem", // 10px 40px 40px 40px
-        width: "100vw",
+        width: "100%",
+        boxSizing: "border-box",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
