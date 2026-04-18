@@ -262,97 +262,80 @@ export default function App() {
       <motion.img
         src="/a.png"
         alt="Profile"
-        initial={{ opacity: 0, scale: 0.8, y: -50 }}
+        className="intro-profile-img"
+        initial={{ opacity: 0, scale: 0.8, y: -40 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        viewport={{ once: false, amount: 0  }}
-        style={{
-          width: 200,
-          height: 200,
-          borderRadius: "50%",
-          objectFit: "cover",
-          border: "3px solid rgba(65, 36, 88, 0.2)",
-          marginBottom: 20,
-          marginLeft: 200,
-        }}
+        viewport={{ once: false, amount: 0 }}
       />
 
-      {/* First Paragraph */}
-        <motion.p
+      {/* Greeting */}
+      <motion.p
+        initial={{ opacity: 0, x: -60 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        viewport={{ once: false, amount: 0 }}
+        style={{
+          margin: 0,
+          fontSize: "clamp(1rem, 2vw, 1.25rem)",
+          color: "#a78bfa",
+          fontWeight: 600,
+          fontFamily: "’Poppins’, sans-serif",
+          marginLeft: "clamp(0px, 6vw, 120px)",
+          letterSpacing: "0.5px",
+        }}
+      >
+        Hi, I’m Hardik — Pursuing Software Engineering
+      </motion.p>
+
+      {/* Bio */}
+      <motion.p
         className="hero-text"
-          initial={{ opacity: 0, x: -100 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-          viewport={{ once: false, amount: 0  }}
-          style={{
-            margin: 0,
-            maxWidth: 900,
-            fontSize: 24,
-            color: "#7758afd2",
-            lineHeight: 1.5,
-          
-            opacity: 2,
-            fontWeight: 900,
-            fontFamily: "'Roboto Slab', serif",
-            marginLeft: 120,
-          }}
-        >
+        initial={{ opacity: 0, x: -80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 1, delay: 0.4 }}
+        viewport={{ once: false, amount: 0 }}
+        style={{ marginLeft: "clamp(0px, 6vw, 120px)" }}
+      >
         AI & Frontend Developer skilled in React.js, Python, and data visualization. Delivered 4+ projects including dashboards, analytics platforms, and 3D web apps. Certified in AI, ML, and Data Analytics with proven impact on performance optimization and team productivity.
       </motion.p>
 
-      {/* Second Paragraph */}
-      <motion.p
-        initial={{ opacity: 0, x: -100 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.6 }}
-        viewport={{ once: false, amount: 0 }}
-        style={{
-          marginTop: 16,
-          fontSize: 22,
-          color: "#7758afd2",
-          lineHeight: 1,
-          fontWeight: 500,
-          fontFamily: "'Roboto Slab', serif",
-          marginLeft: 120,
-        }}
-      >
-        Hi, I’m Hardik, Pursuing software engineering
-      </motion.p>
-
-      {/* Button */}
+      {/* CTA Button */}
       <motion.button
         onClick={() =>
-          document
-            .getElementById("projects-experience")
-            .scrollIntoView({ behavior: "smooth" })
+          document.getElementById("projects-experience").scrollIntoView({ behavior: "smooth" })
         }
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 0.9 }}
-        viewport={{ once: false, amount: 0  }}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+        transition={{ duration: 0.8, delay: 0.7 }}
+        viewport={{ once: false, amount: 0 }}
+        whileHover={{ scale: 1.06, y: -2 }}
+        whileTap={{ scale: 0.96 }}
         style={{
-          marginTop: "20px",
-          padding: "20px 40px",
-          backgroundColor: "#121e2cff",
-          color: "#ffffffff",
-          border: "none",
-          borderRadius: "6px",
-          fontSize: "25px",
-          fontWeight: "600",
+          marginTop: "24px",
+          padding: "14px 36px",
+          background: "linear-gradient(135deg, #5b21b6, #9311df)",
+          color: "#fff",
+          border: "1px solid rgba(147,17,223,0.4)",
+          borderRadius: "30px",
+          fontSize: "clamp(1rem, 2vw, 1.15rem)",
+          fontWeight: "700",
           cursor: "pointer",
-          marginLeft: 120,
-          transition: "background-color 0.3s ease",
+          marginLeft: "clamp(0px, 6vw, 120px)",
+          boxShadow: "0 0 20px rgba(147,17,223,0.4)",
+          transition: "all 0.3s ease",
+          letterSpacing: "0.5px",
         }}
-        onMouseOver={(e) =>
-          (e.currentTarget.style.backgroundColor = "#9311df")
-        }
-        onMouseOut={(e) =>
-          (e.currentTarget.style.backgroundColor = "#121e2cff")
-        }
+        onMouseOver={(e) => {
+          e.currentTarget.style.background = "linear-gradient(135deg, #9311df, #ff0080)";
+          e.currentTarget.style.boxShadow = "0 0 30px rgba(147,17,223,0.6)";
+        }}
+        onMouseOut={(e) => {
+          e.currentTarget.style.background = "linear-gradient(135deg, #5b21b6, #9311df)";
+          e.currentTarget.style.boxShadow = "0 0 20px rgba(147,17,223,0.4)";
+        }}
       >
-        See My Work
+        See My Work ↓
       </motion.button>
     </div>
   
@@ -465,24 +448,25 @@ export default function App() {
           viewport={{ once: false, amount: 0 }}
           transition={{ duration: 0.6, delay: index * 0.2 }}
           style={{
-            background: "#351e3bff",
+            background: "rgba(255,255,255,0.03)",
+            border: "1px solid rgba(147,17,223,0.2)",
             borderRadius: "20px",
-            padding: "40px",
-            boxShadow: "0 8px 20px rgba(0,0,0,0.4)",
-            transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            alignItems: "center",
-            textDecoration: "none", // 🚫 remove underline
-            color: "inherit", // ✅ keep text color
+            padding: "32px",
+            boxShadow: "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)",
+            transition: "transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s",
+            backdropFilter: "blur(8px)",
+            textDecoration: "none",
+            color: "inherit",
           }}
           onMouseOver={(e) => {
-            e.currentTarget.style.transform = "scale(1.05)";
-            e.currentTarget.style.boxShadow =
-              "0 12px 30px rgba(242, 56, 248, 0.5)";
+            e.currentTarget.style.transform = "translateY(-6px) scale(1.02)";
+            e.currentTarget.style.boxShadow = "0 20px 50px rgba(147,17,223,0.3), 0 0 0 1px rgba(255,0,128,0.2)";
+            e.currentTarget.style.borderColor = "rgba(147,17,223,0.5)";
           }}
           onMouseOut={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-            e.currentTarget.style.boxShadow =
-              "0 8px 20px rgba(0,0,0,0.4)";
+            e.currentTarget.style.transform = "translateY(0) scale(1)";
+            e.currentTarget.style.boxShadow = "0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04)";
+            e.currentTarget.style.borderColor = "rgba(147,17,223,0.2)";
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>

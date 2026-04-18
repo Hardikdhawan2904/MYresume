@@ -7,10 +7,10 @@
   justify-content: center;
   align-items: center;
   color: white;
-  
   text-align: center;
-  background: #000;
+  background: linear-gradient(180deg, #000 0%, #060010 100%);
   overflow-x: hidden;
+  padding: 60px 20px;
 }
 
 .education-header {
@@ -23,120 +23,150 @@
 }
 
 .education-title {
-  font-size: 3rem;
+  font-size: clamp(1.8rem, 4vw, 3rem);
   font-weight: bold;
-  color: #8b4caf;
+  color: #c084fc;
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 2px;
   text-transform: uppercase;
+  text-shadow: 0 0 20px rgba(192,132,252,0.5), 0 0 40px rgba(147,17,223,0.3);
 }
 
 .timeline-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   position: relative;
-  gap: 40px;
+  gap: 24px;
   width: 100%;
+  max-width: 1100px;
   flex-wrap: nowrap;
 }
 
 .timeline-line {
   position: absolute;
-  top: 100px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
   width: 80%;
-  height: 4px;
-  background: linear-gradient(90deg, #af4caf, #ff00ff, #af4caf);
-  box-shadow: 0 0 15px #e100ff, 0 0 25px #af4caf;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #af4caf, #ff00ff, #af4caf, transparent);
+  box-shadow: 0 0 12px #e100ff, 0 0 24px #af4caf;
   z-index: 0;
+  border-radius: 2px;
 }
 
 .education-card {
   flex: 1 1 0;
-  position: relative;
-  background: #111;
-  border-radius: 15px;
-  padding: 20px;
-  text-align: center;
   min-width: 0;
-  max-width: 350px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s;
+  max-width: 360px;
+  position: relative;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(147,17,223,0.2);
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.05);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
   z-index: 1;
 }
 
+.education-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(147,17,223,0.06), rgba(255,0,128,0.04));
+  pointer-events: none;
+}
+
 .education-card:hover {
-  transform: translateY(-8px) scale(1.05);
-  box-shadow: 0 10px 30px rgba(212, 0, 255, 0.5);
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(147,17,223,0.5);
+  box-shadow: 0 20px 50px rgba(147,17,223,0.25), 0 0 0 1px rgba(255,0,128,0.1);
 }
 
 .circle {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: #9b4caf;
-  box-shadow: 0 0 15px #984caf;
+  background: linear-gradient(135deg, #9b4caf, #ff0080);
+  box-shadow: 0 0 12px #984caf, 0 0 24px rgba(147,17,223,0.4);
   position: absolute;
-  top: -35px;
+  top: -42px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
 .degree {
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2vw, 1.2rem);
   font-weight: bold;
-  color: #9e4caf;
+  color: #c084fc;
   margin-bottom: 8px;
+  line-height: 1.3;
 }
 
 .field {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-style: italic;
-  color: #bbb;
-  margin-bottom: 5px;
+  color: #a78bfa;
+  margin-bottom: 6px;
 }
 
 .college {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  margin-bottom: 5px;
+  color: #e2d4f0;
+  margin-bottom: 6px;
+  line-height: 1.4;
 }
 
 .details {
-  font-size: 0.95rem;
-  color: #ccc;
+  font-size: 0.88rem;
+  color: #9ca3af;
+  background: rgba(147,17,223,0.1);
+  border-radius: 8px;
+  padding: 4px 10px;
+  display: inline-block;
+  margin-top: 6px;
 }
 
-/* Responsive */
+/* ─── Responsive ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .timeline-container {
+    gap: 16px;
+  }
+  .education-card {
+    padding: 20px 14px;
+  }
+}
+
 @media (max-width: 768px) {
+  .education-section {
+    padding: 50px 16px;
+  }
+
   .education-header {
     margin-bottom: 40px;
     flex-direction: column;
-    gap: 12px;
-  }
-
-  .education-title {
-    font-size: 2rem;
+    gap: 10px;
   }
 
   .timeline-container {
     flex-direction: column;
     align-items: center;
-    gap: 60px;
+    gap: 20px;
+    flex-wrap: wrap;
   }
 
-  .timeline-line {
-    display: none;
-  }
-
-  .circle {
-    display: none;
-  }
+  .timeline-line { display: none; }
+  .circle        { display: none; }
 
   .education-card {
-    min-width: 85vw;
-    max-width: 90vw;
+    min-width: 0;
+    max-width: min(90vw, 400px);
+    width: 100%;
   }
 }

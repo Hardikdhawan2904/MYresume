@@ -1,53 +1,67 @@
-.timeline-container {
-  position: relative;
-  padding: 50px 0;
-  width: 80%;
-  margin: 0 auto;
-  min-height: 600px; /* reduced height for less spacing */
+.timeline-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: bold;
+  color: #c084fc;
+  margin-bottom: 60px;
+  text-shadow: 0 0 20px rgba(201,86,201,0.5), 0 0 40px rgba(147,17,223,0.3);
+  animation: glowPulse 2s ease-in-out infinite;
 }
 
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(201,86,201,0.6), 0 0 20px rgba(147,17,223,0.4);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(201,86,201,1), 0 0 40px rgba(147,17,223,0.7);
+  }
+}
+
+.timeline-icon {
+  height: 50px;
+  filter: drop-shadow(0 0 10px rgba(201,86,201,0.8)) drop-shadow(0 0 20px rgba(147,17,223,0.5));
+}
+
+/* ─── Container ──────────────────────────────────── */
+.timeline-container {
+  position: relative;
+  padding: 40px 0;
+  width: 85%;
+  max-width: 900px;
+  margin: 0 auto;
+  min-height: 500px;
+}
+
+/* ─── Animated bar ───────────────────────────────── */
 .timeline-bar {
   position: absolute;
   left: 50%;
   top: 0;
-  width: 6px;
-  height: 100%;
+  width: 4px;
   background: linear-gradient(to bottom, #8a2be2, #ff0080);
   transform: translateX(-50%);
-  border-radius: 3px;
-
-  /* Neon glow */
-  box-shadow: 0 0 15px #ff0080, 
-              0 0 30px #8a2be2, 
-              0 0 45px #ff0080;
-
-  /* Optional animation for pulsing effect */
-  animation: glowPulse 2s infinite alternate;
+  border-radius: 2px;
+  box-shadow: 0 0 12px #ff0080, 0 0 24px #8a2be2;
+  transition: height 0.1s linear;
 }
 
-@keyframes glowPulse {
-  from {
-    box-shadow: 0 0 10px #ff0080,
-                0 0 20px #8a2be2,
-                0 0 30px #ff0080;
-  }
-  to {
-    box-shadow: 0 0 25px #ff0080,
-                0 0 50px #8a2be2,
-                0 0 75px #ff0080;
-  }
-}
-
+/* ─── Items ──────────────────────────────────────── */
 .timeline-item {
   position: relative;
-  width: 45%;
-  padding: 3px 20px;
-  background: rgba(131, 54, 194, 0.2);
-  border-radius: 10px;
-  margin: 5px 0; /* reduced vertical gap */
+  width: 44%;
+  padding: 16px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(147,17,223,0.2);
+  border-radius: 14px;
+  margin: 12px 0;
   opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease, transform 0.4s ease;
+  transform: translateY(16px);
+  transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s, border-color 0.3s;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04);
 }
 
 .timeline-item.visible {
@@ -55,114 +69,80 @@
   transform: translateY(0);
 }
 
-.timeline-item.left {
-  margin-right: auto;
-  margin-left: 0;
-  text-align: right;
+.timeline-item:hover {
+  background: rgba(147,17,223,0.08);
+  border-color: rgba(147,17,223,0.5);
+  box-shadow: 0 0 20px rgba(255,0,128,0.2), 0 0 40px rgba(138,43,226,0.15);
+  transform: translateY(-4px);
 }
 
-.timeline-item.right {
-  margin-left: auto;
-  margin-right: 0;
-  text-align: left;
-}
+.timeline-item.left  { margin-right: auto; margin-left: 0;    text-align: right; }
+.timeline-item.right { margin-left:  auto; margin-right: 0;   text-align: left;  }
 
+/* Dot connector */
 .timeline-item::before {
   content: '';
   position: absolute;
-  width: 16px;
-  height: 16px;
-  background: #ff0080;
+  width: 12px; height: 12px;
+  background: linear-gradient(135deg, #8a2be2, #ff0080);
   border-radius: 50%;
-  top: 20px; /* adjusted position */
+  top: 18px;
+  box-shadow: 0 0 8px #ff0080, 0 0 16px #8a2be2;
   z-index: 10;
 }
+.timeline-item.left::before  { right: -22px; }
+.timeline-item.right::before { left:  -22px; }
 
-.timeline-item.left::before {
-  right: -15px;
-}
-
-.timeline-item.right::before {
-  left: -15px;
-}
-
+/* Content */
 .timeline-item .content h3 {
-  margin: 0 0 5px 0;
-  color: #dfd7f7;
-  font-size: 1.2rem;
+  margin: 0 0 4px;
+  color: #e2d4f0;
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+  line-height: 1.3;
 }
-
 .timeline-item .content p {
-  margin: 0;
-  color: #cbd5e1;
-}
-
-.timeline-item .content span {
+  margin: 0 0 4px;
+  color: #a78bfa;
   font-size: 0.85rem;
-  color: #a8a8a8;
+  font-weight: 500;
+}
+.timeline-item .content span {
+  font-size: 0.78rem;
+  color: #6b7280;
+  background: rgba(147,17,223,0.1);
+  padding: 2px 8px;
+  border-radius: 10px;
 }
 
-/* Responsive */
+/* ─── Mobile ──────────────────────────────────────── */
 @media screen and (max-width: 768px) {
   .timeline-container {
     width: 95%;
     padding: 20px 0;
+    min-height: auto;
   }
 
-  .timeline-bar {
-    display: none;
-  }
+  .timeline-bar   { display: none; }
 
   .timeline-item,
   .timeline-item.left,
   .timeline-item.right {
-    width: 90%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 12px;
   }
 
-  .timeline-item::before {
-    display: none;
-  }
+  .timeline-item::before { display: none; }
 
   .timeline-title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 6vw, 2rem);
     gap: 10px;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    text-align: center;
   }
 
-  .timeline-icon {
-    height: 40px;
-  }
-}
-.timeline-item:hover {
-  background: rgba(138, 43, 226, 0.25); /* brighten background a little */
-  box-shadow: 0 0 15px #ff0080,
-              0 0 30px #8a2be2,
-              0 0 45px #ff0080;
-  transform: translateY(-5px); /* lift effect */
-  transition: all 0.3s ease-in-out;
-}
-.timeline-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  font-size: 3rem;           /* 👈 heading size */
-  font-weight: bold;
-  color: rgb(201, 86, 201);
-  margin-bottom: 60px;
-
-  text-shadow: 0 0 10px rgba(201, 86, 201, 0.8),
-               0 0 20px rgba(201, 86, 201, 0.6),
-               0 0 30px rgba(201, 86, 201, 0.4);
-  animation: glowPulse 2s ease-in-out infinite;
-}
-
-.timeline-icon {
-  height: 60px;
-  filter: drop-shadow(0 0 10px rgba(201, 86, 201, 0.8))
-          drop-shadow(0 0 20px rgba(201, 86, 201, 0.6))
-          drop-shadow(0 0 30px rgba(201, 86, 201, 0.4));
+  .timeline-icon { height: 36px; }
 }

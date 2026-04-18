@@ -92,17 +92,20 @@ const Work = () => {
             key={index}
             style={{
               width: "100%",
-              padding: "1.5625rem", // 25px
-              borderRadius: "1rem", // 16px
-              background: "rgba(255, 255, 255, 0.05)",
-              border: "1px solid rgba(239, 76, 239, 0.3)",
-              boxShadow: "0 0.25rem 0.75rem rgba(0,0,0,0.2)", // 4px 12px
+              padding: "1.75rem",
+              borderRadius: "1.25rem",
+              background: "rgba(255,255,255,0.03)",
+              border: "1px solid rgba(239,76,239,0.2)",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.04)",
               textAlign: "center",
+              backdropFilter: "blur(8px)",
+              borderLeft: "3px solid rgba(239,76,198,0.6)",
             }}
             whileHover={{
-              scale: 1.03,
-              boxShadow:
-                "0 0 0.75rem rgba(239,76,198,0.4), 0 0.25rem 0.9375rem rgba(0,0,0,0.2)", // 12px, 4px, 15px
+              scale: 1.02,
+              borderColor: "rgba(239,76,239,0.5)",
+              boxShadow: "0 0 24px rgba(239,76,198,0.25), 0 8px 32px rgba(0,0,0,0.3)",
+              y: -4,
             }}
             initial={{ opacity: 0, y: 1.25 }} // 20px
             whileInView={{ opacity: 1, y: 0 }}
