@@ -161,7 +161,7 @@ const Contact = () => {
       <a href="https://www.instagram.com/hardikxdhawan/" target="_blank" rel="noopener noreferrer">
         <img src="/logo1.svg" alt="Logo 1" className="footer-logo" />
       </a>
-      <a href="https://www.linkedin.com/in/hardik-dhawan-415b97239/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/hardik-dhawan-4b273b436/" target="_blank" rel="noopener noreferrer">
         <img src="/logo2.svg" alt="Logo 2" className="footer-logo" />
       </a>
       <a href="https://github.com/Hardikdhawan2904" target="_blank" rel="noopener noreferrer">

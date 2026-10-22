@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, useGLTF, Bounds } from "@react-three/drei";
 import { motion } from "framer-motion";
-import { Wallet, BarChart3, Trophy, Lightbulb, FileText, Folder, Mic } from "lucide-react";
+import { BarChart3, Lightbulb, FileText, ShieldCheck, Workflow, Brain, BookOpen, Users, Database, PawPrint } from "lucide-react";
 import "./App.css";
 
 import LandingPage from "./LandingPage";
@@ -97,46 +97,76 @@ export default function App() {
   // ✅ Projects data
   const projects = [
   {
-    title: "HoloGrid Sphere",
+    title: "AI Dispute Investigation System",
     description:
-      "Interactive holographic sphere with animated grid lines and futuristic HUD effects.",
-    icon: <Lightbulb className="w-10 h-10 text-cyan-400" />,
-    link: "https://github.com/Hardikdhawan2904/HoloGrid-Sphere",
+      "Multi-agent BFSI dispute & fraud investigation platform — 6 LLM agents, 48 fraud-detection tools, automated intake, scoring, and evidence checks.",
+    tech: "FastAPI · PostgreSQL · LLM Agents",
+    icon: <ShieldCheck className="w-10 h-10 text-red-400" />,
+    link: "https://github.com/Hardikdhawan2904/ai-dispute-investigation-system",
+  },
+  {
+    title: "Prism BI",
+    description:
+      "Multi-agent AI pipeline for automated data profiling, quality assessment, and business analytics with Power BI reporting and a live web frontend.",
+    tech: "Python · Multi-Agent AI · Power BI",
+    icon: <Workflow className="w-10 h-10 text-cyan-400" />,
+    link: "https://github.com/Hardikdhawan2904/prism-bi",
+  },
+  {
+    title: "FraudGuard",
+    description:
+      "Real-time fraud detection and decision intelligence platform with ML models, cost-based risk scoring, and a fintech-grade dashboard.",
+    tech: "Python · Machine Learning · Dashboards",
+    icon: <Brain className="w-10 h-10 text-pink-400" />,
+    link: "https://github.com/Hardikdhawan2904/FraudGuard",
+  },
+  {
+    title: "StudyMate AI",
+    description:
+      "RAG-powered study assistant — upload notes and get summaries, quizzes, flashcards, and contextual answers via semantic search.",
+    tech: "RAG · OpenAI · JavaScript",
+    icon: <BookOpen className="w-10 h-10 text-green-400" />,
+    link: "https://studymateai-one.vercel.app",
+  },
+  {
+    title: "Xeno AI Mini CRM",
+    description:
+      "AI-native CRM with natural-language customer segmentation, AI-generated campaigns, async delivery simulation, and real-time analytics.",
+    tech: "TypeScript · LLMs · Vercel",
+    icon: <Users className="w-10 h-10 text-yellow-400" />,
+    link: "https://xeno-ai-mini-crm.vercel.app",
+  },
+  {
+    title: "Distributed Job Scheduler",
+    description:
+      "Job scheduling platform with an asyncio worker pool, atomic job claiming (SKIP LOCKED), crash recovery, cron scheduling, and a live React dashboard.",
+    tech: "FastAPI · PostgreSQL · React",
+    icon: <Database className="w-10 h-10 text-orange-400" />,
+    link: "https://github.com/Hardikdhawan2904/distributed-job-scheduler",
   },
   {
     title: "Purchase Order Dashboard",
     description:
-      "Interactive dashboard for purchase analytics & vendor insights using Plotly.",
+      "Real-time procurement dashboard tracking ₹50M+ purchase orders across 200+ vendors; 40% faster load time, used by 20+ professionals.",
+    tech: "Python · Pandas · Plotly",
     icon: <BarChart3 className="w-10 h-10 text-blue-400" />,
-    link: "https://github.com/Hardikdhawan2904/DASHBOARDRD-FOR-PURCHSE-ORDER",
+    link: "https://github.com/Hardikdhawan2904/Dashboard-for-Purchase-Order",
   },
   {
-    title: "Sports Management System",
+    title: "Animal Species Detector",
     description:
-      "System for player tracking, event scheduling, and match results.",
-    icon: <Trophy className="w-10 h-10 text-yellow-400" />,
-    link: "https://github.com/Hardikdhawan2904/Sports-management-system",
+      "CNN image classifier with preprocessing and augmentation, evaluated with precision, recall, and F1 — end-to-end ML pipeline.",
+    tech: "TensorFlow · Scikit-learn · CNN",
+    icon: <PawPrint className="w-10 h-10 text-amber-400" />,
+    link: "https://github.com/Hardikdhawan2904/ANIMAL-SPECIES-DETECTOR",
   },
   {
-    title: "Bank Management System",
+    title: "HoloGrid Sphere",
     description:
-      "C-based CLI app for managing customer accounts using file handling.",
-    icon: <Folder className="w-10 h-10 text-pink-400" />,
-    link: "https://github.com/Hardikdhawan2904/Bank-Management-System",
-  },
-  {
-    title: "Resume Website",
-    description:
-      "Interactive 3D resume built with React, Three.js, and Tailwind.",
-    icon: <FileText className="w-10 h-10 text-orange-400" />,
-    link: "https://github.com/Hardikdhawan2904/myresume", // Deployed link
-  },
-   {
-    title: "Voice Assistant (Tuesday & Friday)",
-    description:
-      "Python-based voice AI with Dialogflow integration, speech recognition, and multiple conversation modes.",
-    icon: <Mic className="w-10 h-10 text-red-400" />,
-    link: "https://github.com/Hardikdhawan2904/tuesday",
+      "Gesture-controlled holographic sphere with animated energy lines and particles, inspired by Iron Man HUD interfaces.",
+    tech: "Computer Vision · JavaScript · AR",
+    icon: <Lightbulb className="w-10 h-10 text-purple-400" />,
+    link: "https://hologrid-sphere.vercel.app",
   },
 ];
 
@@ -285,7 +315,7 @@ export default function App() {
           letterSpacing: "0.5px",
         }}
       >
-        Hi, I’m Hardik — Pursuing Software Engineering
+        Hi, I’m Hardik — Data Science & AI Engineer
       </motion.p>
 
       {/* Bio */}
@@ -297,7 +327,7 @@ export default function App() {
         viewport={{ once: false, amount: 0 }}
         style={{ marginLeft: "clamp(0px, 6vw, 120px)" }}
       >
-        AI & Frontend Developer skilled in React.js, Python, and data visualization. Delivered 4+ projects including dashboards, analytics platforms, and 3D web apps. Certified in AI, ML, and Data Analytics with proven impact on performance optimization and team productivity.
+        B.Tech CSE student (CGPA 9.14) and former GenAI & Data Intern at EY, building multi-agent LLM systems, ML pipelines, and analytics dashboards. AWS (Solutions Architect, Developer, AI Practitioner) and Oracle AI certified.
       </motion.p>
 
       {/* CTA Button */}
@@ -483,6 +513,9 @@ export default function App() {
           </div>
           <p style={{ marginTop: 12, color: "#cbd5e1" }}>
             {proj.description}
+          </p>
+          <p style={{ marginTop: 12, color: "#a78bfa", fontSize: "0.85rem", fontWeight: 600 }}>
+            {proj.tech}
           </p>
         </motion.a>
       ))}

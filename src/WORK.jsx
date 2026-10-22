@@ -4,13 +4,23 @@ import { FiMonitor } from "react-icons/fi";
 
 const experiences = [
   {
-    role: "Intern - QG EBS Pvt. Ltd.",
-    date: "Dec 2024",
+    role: "GenAI and Data Intern - EY (Tech Consulting)",
+    date: "May 2026 – Jul 2026",
     details: [
-      "Successfully completed the project with strong problem-solving skills.",
-      "Developed a Vendor Spent Analysis Dashboard using Python.",
-      "Conducted a Python Basics training session for QG colleague.",
-      "Recognized by senior leaders for exceptional performance, innovation, and dedication to project success",
+      "Built a multi-agent BFSI dispute investigation platform (FastAPI, PostgreSQL) with 6 specialized LLM agents and 48 fraud-detection tools.",
+      "Designed a DB-first fraud scoring engine using bank-verified signals (SIM swap, device change, geovelocity), reducing false positives.",
+      "Developed a 4-service multi-agent data pipeline for CSV/Excel ingestion, quality gating, schema classification, and AI-readiness scoring with human-in-the-loop approval.",
+      "Built an LLM-powered analytics agent (LangGraph, DuckDB) for natural-language KPI lookup, variance, root-cause, and forecasting.",
+    ],
+  },
+  {
+    role: "Data Science Intern - Quintes Global EBS Pvt. Ltd.",
+    date: "Dec 2024 – Jan 2025",
+    details: [
+      "Applied data mining and trend analysis to ₹50M+ vendor transaction data across 200+ vendors for 20+ stakeholders.",
+      "Reduced data processing time by 35% through Python pipeline automation and query optimization.",
+      "Trained 15+ employees in Python, improving team efficiency by 30%.",
+      "Recognized by senior leadership for delivering high-impact solutions.",
     ],
   },
   {

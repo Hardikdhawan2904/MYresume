@@ -8,7 +8,7 @@ const educationData = [
     degree: "Bachelor of Technology (B.Tech.)",
     field: "Computer Science and Engineering (AI & ML)",
     college: "SRM Institute of Science and Technology, Chennai",
-    details: "Current CGPA: 9.09 | Year: 3rd Year",
+    details: "CGPA: 9.14 / 10 | Expected May 2027",
   },
   {
     degree: "Class 12th – PCM",
