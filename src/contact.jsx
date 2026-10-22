@@ -31,9 +31,9 @@ const Contact = () => {
       method: "POST",
       body: data,
       headers: { Accept: "application/json" },
-    });
+    }).catch(() => null);
 
-    if (response.ok) {
+    if (response?.ok) {
       setStatus("Message sent successfully!");
       form.reset();
       setTimeout(() => setStatus(""), 3000);
@@ -150,8 +150,8 @@ const Contact = () => {
 
     <footer className="contact-footer" style={{ marginTop: "100px" }}>
   <div className="footer-left">
-    <a target="_blank" rel="noopener noreferrer">
-      Terms & Conditions
+    <a href="mailto:dhawanhardik180@gmail.com">
+      dhawanhardik180@gmail.com
     </a>
   </div>
 
@@ -159,18 +159,18 @@ const Contact = () => {
     {/* Logos Section */}
     <div className="footer-logos">
       <a href="https://www.instagram.com/hardikxdhawan/" target="_blank" rel="noopener noreferrer">
-        <img src="/logo1.svg" alt="Logo 1" className="footer-logo" />
+        <img src="/logo1.svg" alt="Instagram" className="footer-logo" />
       </a>
       <a href="https://www.linkedin.com/in/hardik-dhawan-4b273b436/" target="_blank" rel="noopener noreferrer">
-        <img src="/logo2.svg" alt="Logo 2" className="footer-logo" />
+        <img src="/logo2.svg" alt="LinkedIn" className="footer-logo" />
       </a>
       <a href="https://github.com/Hardikdhawan2904" target="_blank" rel="noopener noreferrer">
-        <img src="/logo3.svg" alt="Logo 3" className="footer-logo" />
+        <img src="/logo3.svg" alt="GitHub" className="footer-logo" />
       </a>
     </div>
 
     <span className="footer-text">
-      © 2025 Hardik Dhawan. All rights reserved.
+      © {new Date().getFullYear()} Hardik Dhawan. All rights reserved.
     </span>
   </div>    
 </footer>
