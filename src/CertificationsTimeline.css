@@ -53,7 +53,8 @@
 /* ─── Items ──────────────────────────────────────── */
 .timeline-item {
   position: relative;
-  width: 44%;
+  width: calc(50% - 40px);
+  box-sizing: border-box;
   padding: 16px 20px;
   background: rgba(255,255,255,0.03);
   border: 1px solid rgba(147,17,223,0.2);
@@ -80,11 +81,11 @@
 
 .timeline-item.left {
   margin-left: 0;
-  margin-right: 56%;
+  margin-right: calc(50% + 40px);
   text-align: right;
 }
 .timeline-item.right {
-  margin-left: 56%;
+  margin-left: calc(50% + 40px);
   margin-right: 0;
   text-align: left;
 }
@@ -100,8 +101,9 @@
   box-shadow: 0 0 8px #ff0080, 0 0 16px #8a2be2;
   z-index: 10;
 }
-.timeline-item.left::before  { right: -20px; left: auto; }
-.timeline-item.right::before { left:  -20px; right: auto; }
+/* 40px gap + 1px border + 6px half-dot puts the dot's center on the bar */
+.timeline-item.left::before  { right: -47px; left: auto; }
+.timeline-item.right::before { left:  -47px; right: auto; }
 
 /* Content */
 .timeline-item .content h3 {
